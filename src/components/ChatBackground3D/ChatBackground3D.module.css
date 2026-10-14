@@ -1,0 +1,30 @@
+.wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg-messages-scrim);
+  pointer-events: none;
+}
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(27, 163, 133, 0.18), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 70%, rgba(125, 206, 184, 0.14), transparent 50%),
+    var(--color-bg-panel);
+}

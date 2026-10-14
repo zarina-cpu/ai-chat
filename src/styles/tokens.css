@@ -1,0 +1,49 @@
+:root,
+[data-theme='light'] {
+  --color-bg-page: #f4f6f8;
+  --color-bg-panel: #ffffff;
+  --color-bg-header: #1ba385;
+  --color-bg-header-text: #ffffff;
+  --color-bg-user-bubble: #1ba385;
+  --color-bg-agent-bubble: #eef2f4;
+  --color-text-primary: #1a1d21;
+  --color-text-secondary: #5c6670;
+  --color-text-on-accent: #ffffff;
+  --color-text-agent-bubble: #1a1d21;
+  --color-border: #e2e8ed;
+  --color-input-bg: #f8fafb;
+  --color-launcher: #1ba385;
+  --color-launcher-hover: #159174;
+  --color-chip-bg: #ffffff;
+  --color-chip-border: #d0d9e0;
+  --color-chip-hover: #e8f5f1;
+  --shadow-panel: 0 12px 48px rgba(15, 35, 52, 0.18);
+  --shadow-launcher: 0 4px 20px rgba(27, 163, 133, 0.45);
+  --color-bg-messages-scrim: rgba(255, 255, 255, 0.62);
+  --radius-panel: 16px;
+  --radius-bubble: 14px;
+  --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+[data-theme='dark'] {
+  --color-bg-page: #0f1419;
+  --color-bg-panel: #1c242c;
+  --color-bg-header: #159174;
+  --color-bg-header-text: #ffffff;
+  --color-bg-user-bubble: #1ba385;
+  --color-bg-agent-bubble: #2a3440;
+  --color-text-primary: #e8edf2;
+  --color-text-secondary: #9aa8b5;
+  --color-text-on-accent: #ffffff;
+  --color-text-agent-bubble: #e8edf2;
+  --color-border: #3a4550;
+  --color-input-bg: #252d36;
+  --color-launcher: #1ba385;
+  --color-launcher-hover: #22b894;
+  --color-chip-bg: #252d36;
+  --color-chip-border: #3a4550;
+  --color-chip-hover: #2a3d38;
+  --shadow-panel: 0 12px 48px rgba(0, 0, 0, 0.5);
+  --shadow-launcher: 0 4px 20px rgba(27, 163, 133, 0.35);
+  --color-bg-messages-scrim: rgba(28, 36, 44, 0.68);
+}
