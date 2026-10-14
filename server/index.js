@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import { GEMINI_API_KEY, GEMINI_MODEL, PORT } from './config.js';
-import { generateChatReply } from './gemini.js';
+import { handleChatRequest } from './chatRoute.js';
 
 const app = express();
 
@@ -17,40 +17,8 @@ app.get('/api/health', (_req, res) => {
 });
 
 app.post('/api/chat', async (req, res) => {
-  try {
-    const { messages } = req.body ?? {};
-
-    if (!Array.isArray(messages) || messages.length === 0) {
-      return res.status(400).json({ error: 'Ожидается массив messages' });
-    }
-
-    const valid = messages.every(
-      (m) =>
-        m &&
-        typeof m.text === 'string' &&
-        (m.role === 'user' || m.role === 'agent'),
-    );
-
-    if (!valid) {
-      return res.status(400).json({ error: 'Некорректный формат messages' });
-    }
-
-    const reply = await generateChatReply(messages);
-    return res.json({ reply });
-  } catch (error) {
-    console.error('[api/chat]', error);
-
-    if (error.code === 'MISSING_API_KEY') {
-      return res.status(503).json({
-        error: 'Сервис ИИ не настроен: добавьте GEMINI_API_KEY в .env',
-      });
-    }
-
-    return res.status(502).json({
-      error: 'Не удалось получить ответ от Gemini',
-      details: error.message,
-    });
-  }
+  const result = await handleChatRequest(req.body?.messages);
+  return res.status(result.status).json(result.body);
 });
 
 app.listen(PORT, () => {

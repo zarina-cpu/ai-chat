@@ -8,7 +8,8 @@
     "dev:server": "node server/index.js",
     "dev:all": "concurrently -n web,api -c cyan,green \"npm run dev\" \"npm run dev:server\"",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "vercel:deploy": "vercel --prod"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.0",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
     "concurrently": "^9.1.2",
+    "vercel": "^64.0.2",
     "vite": "^6.0.3"
   }
 }
